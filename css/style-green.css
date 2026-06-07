@@ -31,6 +31,13 @@ body {
   line-height: 1.8;
 }
 
+/* リンクの基本スタイル（下線なし・テーマカラー、ホバーで下線） */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
 /* ============================================================
    ヘッダー
    ============================================================ */
@@ -561,6 +568,353 @@ footer { background: var(--primary); color: rgba(255,255,255,0.8); }
 .sp-fixed a.primary { background: rgba(255,255,255,0.15); }
 
 /* ============================================================
+   共通セクション枠（トップページ・各下層ページ用）
+   ============================================================ */
+.section-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+.section-title-en {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+.btn-more {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--primary);
+  border-bottom: 1px solid var(--primary);
+  padding-bottom: 3px;
+  letter-spacing: 0.05em;
+}
+.news-section, .feature-section, .affiliations-section { background: var(--bg-section); }
+
+/* ============================================================
+   トップページ：ヒーロー
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 80px 24px;
+  width: 100%;
+}
+.hero-catch {
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 1.8;
+  color: var(--white);
+  letter-spacing: 0.05em;
+}
+.hero-catch span {
+  display: block;
+  margin-top: 16px;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.75);
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+.hero-badge {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: var(--white);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+
+/* ============================================================
+   トップページ：お知らせ
+   ============================================================ */
+.news-list { list-style: none; border-top: 1px solid var(--border); margin-bottom: 8px; }
+.news-list .news-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 4px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.news-list .news-date { min-width: 90px; }
+.news-list .news-title { flex: 1; color: var(--text); }
+.news-list .news-title:hover { color: var(--primary); text-decoration: underline; }
+.news-date { font-size: 12px; color: var(--text-muted); letter-spacing: 0.05em; }
+.news-cate {
+  display: inline-block;
+  background: var(--white);
+  color: var(--primary);
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   トップページ：診療時間・アクセス
+   ============================================================ */
+.hours-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.hours-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.hours-table th, .hours-table td { border: 1px solid var(--border); padding: 10px; text-align: center; }
+.hours-table th { background: var(--primary); color: var(--white); font-weight: 400; }
+.hours-table tr:nth-child(even) td { background: var(--white); }
+.hours-table .closed { color: #aaa; }
+.hours-note { margin-top: 16px; font-size: 13px; line-height: 2; color: var(--text-muted); }
+.map-wrap { position: relative; }
+.map-wrap iframe { width: 100%; height: 280px; border: 0; display: block; }
+.access-list { list-style: none; margin-top: 16px; }
+.access-list li {
+  font-size: 13px;
+  line-height: 2;
+  color: var(--text);
+  padding-left: 18px;
+  position: relative;
+}
+.access-list li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  font-size: 9px;
+  color: var(--accent);
+  top: 7px;
+}
+
+/* ============================================================
+   トップページ：院長挨拶
+   ============================================================ */
+.greeting-flex {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.greeting-img img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+.greeting-catch {
+  font-family: var(--serif);
+  font-size: 19px;
+  color: var(--primary);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+.greeting-text p { font-size: 14px; line-height: 2; margin-bottom: 14px; color: var(--text); }
+.greeting-name { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
+.greeting-name strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--primary);
+  margin-top: 4px;
+}
+
+/* ============================================================
+   トップページ：当院の特徴
+   ============================================================ */
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.feature-card { background: var(--white); border: 1px solid var(--border); }
+.feature-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.feature-card-body { padding: 24px; }
+.feature-num {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+.feature-card-body h3 { font-family: var(--serif); font-size: 17px; color: var(--primary); margin-bottom: 10px; }
+.feature-card-body p { font-size: 13px; line-height: 1.9; color: var(--text-muted); margin: 0; }
+
+/* ============================================================
+   トップページ：診療案内
+   ============================================================ */
+.medical-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.medical-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  text-align: center;
+  padding: 28px 16px;
+  text-decoration: none;
+  color: var(--text);
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: block;
+}
+.medical-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateY(-2px); text-decoration: none; }
+.medical-card img { width: 56px; height: 56px; object-fit: contain; margin: 0 auto 14px; display: block; }
+.medical-card h3 { font-family: var(--serif); font-size: 14px; color: var(--primary); margin-bottom: 4px; }
+.medical-card p { font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; margin: 0; }
+
+/* ============================================================
+   トップページ：連携病院
+   ============================================================ */
+.affiliations-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.affiliations-list li {
+  width: 140px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+}
+.affiliations-list img { max-width: 100px; max-height: 46px; object-fit: contain; }
+
+/* ============================================================
+   院長紹介ページ
+   ============================================================ */
+.doctor-flex {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  margin-bottom: 56px;
+  align-items: start;
+}
+.doctor-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; border-radius: 2px; }
+.doctor-img figcaption { text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 12px; line-height: 1.8; }
+.doctor-img figcaption strong { display: block; font-family: var(--serif); font-size: 17px; color: var(--primary); }
+.doctor-text p { font-size: 14px; line-height: 2; margin-bottom: 16px; color: var(--text); }
+.greeting-label {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+.greeting-title { font-family: var(--serif); font-size: 22px; color: var(--primary); margin-bottom: 14px; line-height: 1.6; }
+.greeting-divider, .career-divider, .qual-divider { width: 40px; height: 2px; background: var(--accent); margin-bottom: 24px; }
+.career-section, .qual-section { margin-top: 56px; }
+.career-section h2, .qual-section h2 { font-family: var(--serif); font-size: 22px; color: var(--primary); margin-bottom: 8px; }
+.career-list, .qual-list { list-style: none; }
+.career-item { display: flex; gap: 24px; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+.career-year { min-width: 200px; color: var(--text-muted); font-size: 13px; }
+.career-desc { color: var(--text); }
+.qual-item {
+  font-size: 14px;
+  line-height: 2;
+  padding: 8px 0 8px 18px;
+  border-bottom: 1px solid var(--bg-section);
+  position: relative;
+}
+.qual-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* ============================================================
+   ページ内ナビ（医院案内・受診される方）
+   ============================================================ */
+.page-nav { background: var(--bg-section); border-bottom: 1px solid var(--border); }
+.page-nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.page-nav-inner a { font-size: 13px; color: var(--primary); padding: 14px 18px; letter-spacing: 0.05em; }
+
+/* ============================================================
+   医院案内ページ
+   ============================================================ */
+.overview-section { margin-bottom: 56px; }
+.overview-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.overview-table th, .overview-table td { border: 1px solid var(--border); padding: 16px 20px; text-align: left; line-height: 1.8; }
+.overview-table th { background: var(--bg-section); color: var(--primary); font-weight: 500; width: 160px; white-space: nowrap; }
+.facilities-section, .equipment-section { margin-bottom: 56px; }
+.photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.photo-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; border-radius: 2px; }
+.photo-item figcaption { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+.equipment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.equipment-card { background: var(--white); border: 1px solid var(--border); }
+.equipment-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.equipment-card-body { padding: 18px; }
+.equipment-card-body h3 { font-family: var(--serif); font-size: 15px; color: var(--primary); margin-bottom: 6px; }
+.equipment-card-body p { font-size: 13px; line-height: 1.8; color: var(--text-muted); margin: 0; }
+
+/* ============================================================
+   受診される方ページ
+   ============================================================ */
+.info-card { background: var(--white); border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 24px; }
+.info-card.card-highlight { border-color: var(--accent); border-width: 2px; background: var(--bg-section); }
+.card-label {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+.card-title { font-family: var(--serif); font-size: 19px; color: var(--primary); margin-bottom: 6px; }
+.card-divider { width: 32px; height: 2px; background: var(--accent); margin-bottom: 16px; }
+.info-card p { font-size: 14px; line-height: 2; margin-bottom: 10px; color: var(--text); }
+.info-card p:last-child { margin-bottom: 0; }
+.info-minor { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+.info-minor-title { font-size: 12px; color: var(--text-muted); letter-spacing: 0.1em; margin-bottom: 16px; }
+.minor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.minor-block h4 { font-size: 13px; color: var(--primary); margin-bottom: 8px; }
+.minor-block p, .minor-block li { font-size: 12px; line-height: 1.9; color: var(--text-muted); }
+.minor-block ul { padding-left: 18px; }
+
+/* ============================================================
+   お知らせページ
+   ============================================================ */
+article.news-item { padding: 32px 0; border-bottom: 1px solid var(--border); }
+article.news-item:first-of-type { padding-top: 0; }
+.news-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+article.news-item h2 { font-family: var(--serif); font-size: 19px; color: var(--primary); margin-bottom: 14px; }
+.news-body p { font-size: 14px; line-height: 2; margin-bottom: 10px; color: var(--text); }
+.news-body p:last-child { margin-bottom: 0; }
+
+/* ============================================================
    レスポンシブ
    ============================================================ */
 @media (max-width: 768px) {
@@ -574,4 +928,25 @@ footer { background: var(--primary); color: rgba(255,255,255,0.8); }
   .sp-fixed { display: block; }
   body { padding-bottom: 64px; }
   nav { display: none; }
+
+  /* 新規ページ用レスポンシブ */
+  .section-inner { padding: 40px 16px; }
+  .hero { min-height: 360px; }
+  .hero-inner { padding: 48px 16px; }
+  .hero-catch { font-size: 20px; }
+  .hours-grid { grid-template-columns: 1fr; gap: 24px; }
+  .greeting-flex { grid-template-columns: 1fr; }
+  .greeting-img img { aspect-ratio: 4/3; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .medical-grid { grid-template-columns: repeat(2, 1fr); }
+  .doctor-flex { grid-template-columns: 1fr; }
+  .doctor-img img { aspect-ratio: 4/3; }
+  .career-item { flex-direction: column; gap: 4px; }
+  .career-year { min-width: 0; }
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .equipment-grid { grid-template-columns: 1fr; }
+  .overview-table th { width: auto; white-space: normal; }
+  .minor-grid { grid-template-columns: 1fr; gap: 24px; }
+  .news-list .news-item { flex-wrap: wrap; gap: 8px; }
+  .page-nav-inner a { padding: 10px 12px; font-size: 12px; }
 }
