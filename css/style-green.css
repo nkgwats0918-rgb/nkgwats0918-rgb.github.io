@@ -363,7 +363,7 @@ nav a:hover, nav a.active { color: #fff; }
 .column-banner-text p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.9; margin: 0; }
 .column-banner-btn {
   background: var(--accent);
-  color: var(--primary);
+  color: var(--white);
   padding: 12px 28px;
   font-size: 13px;
   white-space: nowrap;
