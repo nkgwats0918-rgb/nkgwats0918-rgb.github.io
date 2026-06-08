@@ -117,13 +117,13 @@ nav a:hover, nav a.active { color: #fff; }
 /* ============================================================
    ページヒーロー
    ============================================================ */
-.page-hero {
+.page-top {
   background: var(--primary);
   padding: 48px 24px;
   position: relative;
   overflow: hidden;
 }
-.page-hero::after {
+.page-top::after {
   content: '';
   position: absolute;
   right: 0; top: 0; bottom: 0;
@@ -131,13 +131,13 @@ nav a:hover, nav a.active { color: #fff; }
   background: url('https://hasegawaiin.jp/wp/wp-content/uploads/2025/02/inner.jpg') center/cover;
   opacity: 0.15;
 }
-.page-hero-inner {
+.page-top-inner {
   max-width: var(--max);
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
-.page-hero-en {
+.page-top-en {
   font-size: 11px;
   color: var(--accent);
   letter-spacing: 0.25em;
@@ -145,7 +145,7 @@ nav a:hover, nav a.active { color: #fff; }
   margin-bottom: 8px;
   display: block;
 }
-.page-hero h1 {
+.page-top h1 {
   font-family: var(--serif);
   font-size: 30px;
   color: var(--white);

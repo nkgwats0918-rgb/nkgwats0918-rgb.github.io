@@ -124,13 +124,13 @@ nav a:hover, nav a.active { color: #fff; }
 /* ============================================================
    ページヒーロー
    ============================================================ */
-.page-hero {
+.page-top {
   background: var(--primary);
   padding: 48px 24px;
   position: relative;
   overflow: hidden;
 }
-.page-hero::after {
+.page-top::after {
   content: '';
   position: absolute;
   right: 0; top: 0; bottom: 0;
@@ -138,13 +138,13 @@ nav a:hover, nav a.active { color: #fff; }
   background: url('https://hasegawaiin.jp/wp/wp-content/uploads/2025/02/inner.jpg') center/cover;
   opacity: 0.15;
 }
-.page-hero-inner {
+.page-top-inner {
   max-width: var(--max);
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
-.page-hero-en {
+.page-top-en {
   font-size: 11px;
   color: var(--accent);
   letter-spacing: 0.25em;
@@ -152,7 +152,7 @@ nav a:hover, nav a.active { color: #fff; }
   margin-bottom: 8px;
   display: block;
 }
-.page-hero h1 {
+.page-top h1 {
   font-family: var(--serif);
   font-size: 30px;
   color: var(--white);
@@ -597,19 +597,19 @@ footer { background: var(--primary); color: rgba(255,255,255,0.8); }
 /* ============================================================
    トップページ：ヒーロー
    ============================================================ */
-.nk-hero {
+.nk-top {
   position: relative;
   min-height: 460px;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
-.nk-hero-bg {
+.nk-top-bg {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
 }
-.nk-hero-inner {
+.nk-top-inner {
   position: relative;
   z-index: 1;
   max-width: var(--max);
@@ -617,14 +617,14 @@ footer { background: var(--primary); color: rgba(255,255,255,0.8); }
   padding: 80px 24px;
   width: 100%;
 }
-.nk-hero-catch {
+.nk-top-catch {
   font-family: var(--serif);
   font-size: 26px;
   line-height: 1.8;
   color: var(--white);
   letter-spacing: 0.05em;
 }
-.nk-hero-catch span {
+.nk-top-catch span {
   display: block;
   margin-top: 16px;
   font-family: var(--sans);
@@ -632,13 +632,13 @@ footer { background: var(--primary); color: rgba(255,255,255,0.8); }
   letter-spacing: 0.15em;
   color: rgba(255,255,255,0.75);
 }
-.nk-hero-badges {
+.nk-top-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 32px;
 }
-.nk-hero-badge {
+.nk-top-badge {
   background: rgba(255,255,255,0.15);
   border: 1px solid rgba(255,255,255,0.4);
   color: var(--white);
@@ -931,9 +931,9 @@ article.nk-news-item h2 { font-family: var(--serif); font-size: 19px; color: var
 
   /* 新規ページ用レスポンシブ */
   .nk-section-inner { padding: 40px 16px; }
-  .nk-hero { min-height: 360px; }
-  .nk-hero-inner { padding: 48px 16px; }
-  .nk-hero-catch { font-size: 20px; }
+  .nk-top { min-height: 360px; }
+  .nk-top-inner { padding: 48px 16px; }
+  .nk-top-catch { font-size: 20px; }
   .nk-hours-grid { grid-template-columns: 1fr; gap: 24px; }
   .nk-greeting-flex { grid-template-columns: 1fr; }
   .nk-greeting-img img { aspect-ratio: 4/3; }
