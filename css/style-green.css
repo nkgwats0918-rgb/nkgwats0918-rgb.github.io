@@ -88,17 +88,19 @@ header {
   text-align: center;
 }
 .btn-reserve {
-  background: var(--primary);
+  background: #e07030;
   color: var(--white);
   padding: 10px 20px;
   border-radius: 4px;
   text-decoration: none;
   font-size: 13px;
+  font-weight: 500;
   letter-spacing: 0.05em;
   transition: background 0.2s;
   white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(224,112,48,0.35);
 }
-.btn-reserve:hover { background: var(--primary-light); }
+.btn-reserve:hover { background: #c45e22; text-decoration: none; }
 
 /* ============================================================
    ナビゲーション
@@ -565,7 +567,7 @@ footer { background: var(--primary); color: rgba(255,255,255,0.8); }
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 3px;
 }
-.sp-fixed a.primary { background: rgba(255,255,255,0.15); }
+.sp-fixed a.primary { background: #e07030; border-color: #e07030; }
 
 /* ============================================================
    共通セクション枠（トップページ・各下層ページ用）
